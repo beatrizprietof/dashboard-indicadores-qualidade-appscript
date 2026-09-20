@@ -23,9 +23,7 @@
 ## Demonstração Visual
 
 ### 1. Interface do Web App (Painel de Indicadores)
-![Visão Geral do Web App](dashboard.mp4
-
-)
+![Visão Geral do Web App](dashboard.mp4)
 
 
 ---
