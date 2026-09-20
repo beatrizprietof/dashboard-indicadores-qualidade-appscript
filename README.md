@@ -23,10 +23,11 @@
 ## Demonstração Visual
 
 ![Painel de Qualidade](dashboard.png)
+![Painel de Qualidade](dashboard.mp4)
 
 ---
 
-## ⚙️ Arquitetura do Fluxo
+## Arquitetura do Fluxo
 
 ```text
 [ Banco de Dados (Google Sheets) ]
