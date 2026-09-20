@@ -1,4 +1,4 @@
-# Web App de Indicadores de Qualidade (Google Apps Script + HTML/JS)
+# Web App de dashboard de Qualidade
 
 > Aplicação web customizada e responsiva construída sobre o Google Apps Script para consolidar, tratar e exibir indicadores de qualidade em tempo real a partir de bases diagnósticas do Google Sheets.
 
@@ -6,7 +6,7 @@
 
 ## Objetivo & Contexto de Negócio
 
-* **Problema:** Os dados de monitoria e qualidade estavam dispersos em múltiplas abas operacionais dentro do Google Sheets (*Entrada Facilitada*, *Overpricing*, *Despublicados* e *Descartes*). Além disso, a associação entre analista e supervisor exigia atualizações manuais e fórmulas pesadas que travavam a planilha.
+* **Problema:** Os dados de monitoria e qualidade estavam dispersos em múltiplas abas operacionais dentro do Google Sheets. Além disso, a associação entre analista e supervisor exigia atualizações manuais e fórmulas pesadas que travavam a planilha.
 * **Solução:** Desenvolvimento de um **Web App customizado via Google Apps Script (HTMLService)**. A aplicação lê as 4 frentes diagnósticas via backend em JavaScript, realiza o enriquecimento automático da estrutura hierárquica (mapeando cada analista ao seu respetivo supervisor a partir da aba de *Gestão de Pessoas*) e serve uma interface web leve, dinâmica e responsiva.
 
 ---
@@ -23,10 +23,10 @@
 ## Demonstração Visual
 
 ### 1. Interface do Web App (Painel de Indicadores)
-![Visão Geral do Web App](https://via.placeholder.com/800x400.png?text=Cole+aqui+um+print+do+Dashboard+executando)
+![Visão Geral do Web App](
 
-### 2. Navegação entre as Frentes Diagnósticas
-![Navegação do Painel](https://via.placeholder.com/800x400.png?text=Cole+aqui+um+GIF+mostrando+a+alternância+de+abas)
+)
+
 
 ---
 
