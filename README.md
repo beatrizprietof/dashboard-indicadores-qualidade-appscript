@@ -13,7 +13,7 @@
 
 ## Ferramentas
 
-* **Backend & API:** [Google Apps Script](Code.gs) (JavaScript Server-Side)
+* **Backend & API:** [Google Apps Script](code.gs) (JavaScript Server-Side)
 * **Frontend:** HTML5, CSS3, JavaScript (ES6+)
 * **Banco de Dados / Data Source:** Google Sheets API (Integração nativa)
 * **Arquitetura Web:** HTMLService (`doGet`), JSON Data Parsing
