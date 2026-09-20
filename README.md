@@ -1,48 +1,45 @@
-# Web App de dashboard de Qualidade
+# Web App de Indicadores de Qualidade
 
-> Aplicação web customizada e responsiva construída sobre o Google Apps Script para consolidar, tratar e exibir indicadores de qualidade em tempo real a partir de bases diagnósticas do Google Sheets.
+> Aplicação Web (Single Page Application) desenvolvida em Google Apps Script para consolidar e exibir indicadores operacionais, permitindo que a liderança acompanhe as monitorias de qualidade em tempo real.
 
 ---
 
 ## Objetivo & Contexto de Negócio
 
-* **Problema:** Os dados de monitoria e qualidade estavam dispersos em múltiplas abas operacionais dentro do Google Sheets. Além disso, a associação entre analista e supervisor exigia atualizações manuais e fórmulas pesadas que travavam a planilha.
-* **Solução:** Desenvolvimento de um **Web App customizado via Google Apps Script (HTMLService)**. A aplicação lê as 4 frentes diagnósticas via backend em JavaScript, realiza o enriquecimento automático da estrutura hierárquica (mapeando cada analista ao seu respetivo supervisor a partir da aba de *Gestão de Pessoas*) e serve uma interface web leve, dinâmica e responsiva.
+* **Problema:** A liderança de vendas não possuía visibilidade imediata sobre os resultados das monitorias de qualidade. Os dados ficavam fragmentados em várias abas de planilhas complexas, dificultando a tomada de decisão rápida e o acompanhamento de desempenho da equipe.
+* **Solução:** Desenvolvimento de um **Web App customizado** consumindo dados diretamente do Google Sheets. A aplicação funciona como um painel de controle (Dashboard) em tempo real, onde a liderança acessa um link único e visualiza todos os KPIs consolidados em uma interface web intuitiva e responsiva.
 
 ---
 
 ## Ferramentas
 
-* **Backend & API:** [Google Apps Script](code.gs) (JavaScript Server-Side)
-* **Frontend:** HTML5, CSS3, JavaScript (ES6+)
-* **Banco de Dados / Data Source:** Google Sheets API (Integração nativa)
-* **Arquitetura Web:** HTMLService (`doGet`), JSON Data Parsing
+* **Backend / API:** [Google Apps Script](code.) (JavaScript)
+* **Frontend:** HTML5, CSS3 e JavaScript Vanilla
+* **Banco de Dados:** Google Sheets (Múltiplas abas relacionais: `general_data`, `checklist`, `ncg`, `feedback`, `contest`)
+* **Padrão Arquitetural:** MVC (Model-View-Controller) / JSON Data Parsing
 
 ---
 
 ## Demonstração Visual
 
-### 1. Interface do Web App (Painel de Indicadores)
-![Visão Geral do Web App](dashboard.mp4)
-
+![Painel de Qualidade](dashboard.png)
 
 ---
 
-## Funcionalidades Técnicas & Backend
-
-* **Mapeamento Automático de Hierarquia:** Função em backend (`getDashboardData`) que cruza os e-mails dos analistas presentes nas bases com a aba `Gestão de Pessoas`, atribuindo o supervisor correto dinamicamente.
-*  **Consolidação Multibase (4 Pilares):** Processamento simultâneo das abas:
-  1. *Entrada Facilitada [diag]*
-  2. *Overpricing [diag]*
-  3. *Despublicados [diag]*
-  4. *Descartes [diag]*
-*  **Performance & Escala:** Abordagem via script que elimina a necessidade de fórmulas complexas (`PROCV` / `XLOOKUP`) na planilha, deixando a base leve e evitando erros de cálculo.
-*  **Acesso Web Autónomo:** Publicação como Web App (`doGet`) acessível diretamente via URL para utilizadores autorizados.
-
----
-
-## Estrutura do Código
+## ⚙️ Arquitetura do Fluxo
 
 ```text
-├── Code.gs             # Backend: Leitura das planilhas, mapeamento e estruturação do JSON
-└── Index.html          # Frontend: Interface visual, estilização e renderização dos gráficos/tabelas
+[ Banco de Dados (Google Sheets) ]
+  (Abas: aux, general, checklist...)
+                 │
+                 ▼
+ [ Backend (Code.gs - Google Apps Script) ]
+  • Mapeamento das planilhas
+  • Tratamento e conversão de Datas
+  • Empacotamento dos dados em JSON
+                 │
+                 ▼
+ [ Frontend (Index.html via doGet) ]
+  • Consumo do objeto JSON
+  • Renderização Gráfica em Tempo Real
+  • Visualização pela Liderança
