@@ -13,7 +13,7 @@
 
 ## Ferramentas
 
-* **Backend / API:** [Google Apps Script](code.) (JavaScript)
+* **Backend / API:** [Google Apps Script](code.gs) (JavaScript)
 * **Frontend:** HTML5, CSS3 e JavaScript Vanilla
 * **Banco de Dados:** Google Sheets (Múltiplas abas relacionais: `general_data`, `checklist`, `ncg`, `feedback`, `contest`)
 * **Padrão Arquitetural:** MVC (Model-View-Controller) / JSON Data Parsing
